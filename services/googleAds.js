@@ -3,7 +3,7 @@
  * Uses the REST API directly to avoid SDK complexities with one-time tokens
  */
 
-const ADS_API_VERSION = 'v17';
+const ADS_API_VERSION = 'v18';
 const ADS_BASE = `https://googleads.googleapis.com/${ADS_API_VERSION}`;
 
 async function gaqlQuery(customerId, query, accessToken, developerToken) {
