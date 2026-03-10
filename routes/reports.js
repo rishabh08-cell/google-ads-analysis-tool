@@ -20,8 +20,8 @@ router.get('/accounts', async (req, res) => {
   const accessToken = authHeader.replace('Bearer ', '');
 
   try {
-    const customerIds = await getAccessibleCustomers(accessToken, process.env.GOOGLE_ADS_DEVELOPER_TOKEN);
-    res.json({ accounts: customerIds.map(id => ({ id, name: `Account ${id}` })) });
+        const accounts = await getAccessibleCustomers(accessToken, process.env.GOOGLE_ADS_DEVELOPER_TOKEN);
+          res.json({ accounts });
   } catch (err) {
     console.error('Accounts fetch error:', err);
     res.status(500).json({ error: err.message });
