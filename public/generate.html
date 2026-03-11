@@ -66,12 +66,12 @@
           }
 
           async function generate() {
-            const customerId = document.getElementById('account').value;
+                  const customerId = document.getElementById('account').value;
                   const period = document.getElementById('period').value;
                   document.getElementById('form').style.display = 'none';
-                                                                                    document.getElementById('progress').style.display = 'block';
+                  document.getElementById('progress').style.display = 'block';
                   const steps = ['Fetching account data...', 'Inferring campaign themes...', 'Detecting anomalies...', 'Generating executive analysis...', 'Building report...'];
-                                    let i = 0;
+                  let i = 0;
                   const interval = setInterval(() => { if (i < steps.length) document.getElementById('stepText').textContent = steps[i++]; }, 3000);
                   try {
                             const res = await fetch('/api/reports/generate', {
